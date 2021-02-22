@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Text from "./Text";
+import Email from "./Email";
 import '../App.css';
 
 class Body extends Component {
@@ -9,7 +10,11 @@ class Body extends Component {
             var activeTab = this.props.activeTab;
             if(activeTab === 1) {
                 return <Text/>
-            } else {
+            } 
+            if(activeTab === 5) {
+                return  <Email/>
+            }
+            else {
                 return <div></div>
             }
         }
