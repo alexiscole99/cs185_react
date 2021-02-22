@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../App.css';
 
 function Tab(props) {
 
@@ -13,7 +14,7 @@ function Tab(props) {
 
     return (
         // inline styling and onclick bind
-        <div style={addStyle()} onClick={props.ctab.bind(this,props.out.id)}>{props.out.title}</div>
+        <div className="tab" style={addStyle()} onClick={props.ctab.bind(this,props.out.id)}>{props.out.title}</div>
     )
 }
 export default Tab;

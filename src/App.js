@@ -1,5 +1,6 @@
 import './App.css';
 import Tablist from './components/Tablist';
+import Body from './components/Body';
 import { Component } from 'react';
 
 class App extends Component {
@@ -26,26 +27,25 @@ class App extends Component {
     },
     {
       id:3,
-      title:'Image'
-    },
-    {
-      id:4,
       title:'Video'
     },
     {
-      id:5,
+      id:4,
       title:'Table'
     },
     {
-      id:6,
+      id:5,
       title:'Email'
     },
   ]
   return (
     <div className="App">
-      <nav>
+      <div className="body">
+        <Body activeTab={this.state.active}/>
+      </div>
+      <div className="tablist">
         <Tablist tabs={tabs} activeTab={this.state.active} ctab={this.changeTab}/>
-      </nav>
+      </div>
     </div>
   )
 
