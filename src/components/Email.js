@@ -26,9 +26,15 @@ class Email extends Component {
         console.log("email")
         return (
             <div>
+                <h1>Email Validation</h1>
                 <form onSubmit={this.validateEmail}>
                     <label for="email">Email:
-                        <input type="text" id="address" name="email" onChange={this.handleChange}/>
+                        <input 
+                            type="text" 
+                            id="address" 
+                            name="email" 
+                            onChange={this.handleChange} 
+                            style={{margin: '20px'}}/>
                     </label>
                     <input type="submit" value="Submit"/>
                 </form>
