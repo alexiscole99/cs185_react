@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/cs185_react/static/css/main.a58d39cd.chunk.css",
+    "main.js": "/cs185_react/static/js/main.226fabd3.chunk.js",
+    "main.js.map": "/cs185_react/static/js/main.226fabd3.chunk.js.map",
+    "runtime-main.js": "/cs185_react/static/js/runtime-main.1f6ec463.js",
+    "runtime-main.js.map": "/cs185_react/static/js/runtime-main.1f6ec463.js.map",
+    "static/js/2.e76b4a2f.chunk.js": "/cs185_react/static/js/2.e76b4a2f.chunk.js",
+    "static/js/2.e76b4a2f.chunk.js.map": "/cs185_react/static/js/2.e76b4a2f.chunk.js.map",
+    "static/js/3.c7328da8.chunk.js": "/cs185_react/static/js/3.c7328da8.chunk.js",
+    "static/js/3.c7328da8.chunk.js.map": "/cs185_react/static/js/3.c7328da8.chunk.js.map",
+    "index.html": "/cs185_react/index.html",
+    "static/css/main.a58d39cd.chunk.css.map": "/cs185_react/static/css/main.a58d39cd.chunk.css.map",
+    "static/js/2.e76b4a2f.chunk.js.LICENSE.txt": "/cs185_react/static/js/2.e76b4a2f.chunk.js.LICENSE.txt",
+    "static/media/amsterdam.9f546d00.png": "/cs185_react/static/media/amsterdam.9f546d00.png",
+    "static/media/amsterdam2.2c4ad1f2.png": "/cs185_react/static/media/amsterdam2.2c4ad1f2.png",
+    "static/media/amsterdam3.e5441ce8.png": "/cs185_react/static/media/amsterdam3.e5441ce8.png",
+    "static/media/berlin.297257ce.png": "/cs185_react/static/media/berlin.297257ce.png",
+    "static/media/big_sur.b6bbe117.png": "/cs185_react/static/media/big_sur.b6bbe117.png",
+    "static/media/blue_sky.e7a9a8b6.png": "/cs185_react/static/media/blue_sky.e7a9a8b6.png",
+    "static/media/copenhagen.b80e3f75.png": "/cs185_react/static/media/copenhagen.b80e3f75.png",
+    "static/media/elvin.4d651555.png": "/cs185_react/static/media/elvin.4d651555.png",
+    "static/media/iceland.fe003043.png": "/cs185_react/static/media/iceland.fe003043.png",
+    "static/media/iceland2.c4e0ce1f.png": "/cs185_react/static/media/iceland2.c4e0ce1f.png",
+    "static/media/iceland3.c14c77bf.png": "/cs185_react/static/media/iceland3.c14c77bf.png",
+    "static/media/lund.019726c4.png": "/cs185_react/static/media/lund.019726c4.png",
+    "static/media/lund2.8b960e6b.png": "/cs185_react/static/media/lund2.8b960e6b.png",
+    "static/media/rowing.9da7b7ce.png": "/cs185_react/static/media/rowing.9da7b7ce.png",
+    "static/media/sb.b3433235.png": "/cs185_react/static/media/sb.b3433235.png",
+    "static/media/sd.f4acccc7.png": "/cs185_react/static/media/sd.f4acccc7.png",
+    "static/media/zaandam.cb18d516.png": "/cs185_react/static/media/zaandam.cb18d516.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1f6ec463.js",
+    "static/js/2.e76b4a2f.chunk.js",
+    "static/css/main.a58d39cd.chunk.css",
+    "static/js/main.226fabd3.chunk.js"
+  ]
+}
