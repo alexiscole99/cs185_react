@@ -39,12 +39,12 @@ class App extends Component {
     },
   ]
   return (
-    <div className="App">
-      <div className="body">
-        <Body activeTab={this.state.active}/>
-      </div>
-      <div className="tablist">
+    <div className="body">
+      <div className="tab-list">
         <Tablist tabs={tabs} activeTab={this.state.active} ctab={this.changeTab}/>
+      </div>
+      <div>
+        <Body activeTab={this.state.active}/>
       </div>
     </div>
   )

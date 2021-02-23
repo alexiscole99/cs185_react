@@ -25,18 +25,23 @@ class ImageGallery extends Component {
         super();
         this.state = {
           showModal: false,
-          modalSrc: "",
+          modalSrc: sd,
           srcId: 17
         }
         this.openModal = (id, src) => {
             console.log("click image")
+            //console.log(id)
+            //console.log(src)
             this.setState({showModal: true, modalSrc: src, srcId: id});
+            //console.log(this.state.showModal)
+            //console.log(this.state.srcId)
+            //console.log(this.state.modalSrc)
         }
         this.closeModal = () => {
-            this.setState({showModal: false, modalSrc: "", srcId: 17});
+            this.setState({showModal: false, modalSrc: sd, srcId: 17});
         }
-        this.portrait = [0,2,6,7,10,12,13];
-        this.landscape = [1,3,4,5,8,9,11,14,15,16];
+        this.portrait = [0,1,2,4,9,11,12];
+        this.landscape = [3,5,6,7,8,10,13,14,15,16];
 
         this.addStyle = (id) => {
             if(this.portrait.includes(Number(id))) {
@@ -118,18 +123,21 @@ class ImageGallery extends Component {
         }
         ]
 
+        this.modalRef = React.createRef();
+
     }
 
     render() {
+        //console.log(Ams)
         return(
             <div className="container">
                 <Images images={this.images} openModal={this.openModal}/>
                 <ImgModal 
-                    showModal={this.showModal} 
+                    showModal={this.state.showModal} 
                     closeModal={this.closeModal} 
-                    customStyle={this.addStyle(this.srcId)} 
-                    modalSrc={this.modalSrc}
-                    srcId={this.srcId}
+                    customStyle={this.addStyle(this.state.srcId)} 
+                    modalSrc={this.state.modalSrc}
+                    srcId={this.state.srcId}
                 />
             </div>
         );

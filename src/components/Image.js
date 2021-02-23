@@ -9,7 +9,7 @@ class Image extends Component {
                 <img 
                     src={this.props.image.src} 
                     id={this.props.image.id} 
-                    width='200'
+                    width = "200"
                     onClick={this.props.openModal.bind(this, this.props.image.id, this.props.image.src)}
                 />
             </figure>

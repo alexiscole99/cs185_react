@@ -1,5 +1,5 @@
 /* nav bar styling */
-.tablist {
+.tab-list {
   background-color: #98acf8;
   position: fixed;
   top: 0;
@@ -11,21 +11,27 @@
   align-content: center;
 }
 
-.tablist * {
+/*.tab-list a {
   display: inline;
   text-decoration: none;
 }
 
+.tab-list a:hover {
+  background-color: #da9ff9;
+}*/
+
 .tab {
+  /*display: inline-block;*/
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  /*margin: 10px;*/
+  /*padding-top: 20px;
+  padding-bottom: 20px;*/
+  padding: 20px;
   color: whitesmoke;
   text-decoration: none;
   font-size: larger;
-  margin: 40px;
+  margin: 10px;
   width: 10%;
+  cursor: pointer;
 }
 
 /*.nav li.active {
@@ -33,16 +39,12 @@
 }*/
 
 .tab:hover {
-  /*background-color: #da9ff9;*/
-  background-color: black;
+  background-color: #da9ff9;
 }
 
-/*.tab a {
-  color: whitesmoke;
-  text-decoration: none;
-  font-size: larger;
-  margin: 40px;
-}*/
+.tab:active {
+  background-color: '#b088f9';
+}
 
 /* styling for body of page */
 body {
@@ -117,7 +119,7 @@ td, th {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: none;
+  display: block;
   margin: auto auto; 
   width: 80%;
   max-width: 700px;
@@ -129,7 +131,7 @@ td, th {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: none;
+  display: block;
   margin: auto auto; 
   height: 80%;
   max-height: 700px;
