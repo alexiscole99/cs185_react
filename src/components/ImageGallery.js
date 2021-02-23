@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Images from './Images';
 import ImgModal from './ImgModal';
+import ScrollButton from './ScrollButton';
 import '../App.css';
 import Ams from '../images/amsterdam.png';
 import Ams2 from '../images/amsterdam2.png';
@@ -29,13 +30,7 @@ class ImageGallery extends Component {
           srcId: 17
         }
         this.openModal = (id, src) => {
-            console.log("click image")
-            //console.log(id)
-            //console.log(src)
             this.setState({showModal: true, modalSrc: src, srcId: id});
-            //console.log(this.state.showModal)
-            //console.log(this.state.srcId)
-            //console.log(this.state.modalSrc)
         }
         this.closeModal = () => {
             this.setState({showModal: false, modalSrc: sd, srcId: 17});
@@ -123,22 +118,23 @@ class ImageGallery extends Component {
         }
         ]
 
-        this.modalRef = React.createRef();
-
     }
 
     render() {
         //console.log(Ams)
         return(
-            <div className="container">
-                <Images images={this.images} openModal={this.openModal}/>
-                <ImgModal 
-                    showModal={this.state.showModal} 
-                    closeModal={this.closeModal} 
-                    customStyle={this.addStyle(this.state.srcId)} 
-                    modalSrc={this.state.modalSrc}
-                    srcId={this.state.srcId}
-                />
+            <div>
+                <div className="container">
+                    <Images images={this.images} openModal={this.openModal}/>
+                    <ImgModal 
+                        showModal={this.state.showModal} 
+                        closeModal={this.closeModal} 
+                        customStyle={this.addStyle(this.state.srcId)} 
+                        modalSrc={this.state.modalSrc}
+                        srcId={this.state.srcId}
+                    />
+                </div>
+                <ScrollButton displayButton={this.props.displayButton} toTop={this.props.toTop}/>
             </div>
         );
     }
