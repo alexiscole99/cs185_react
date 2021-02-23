@@ -1,0 +1,16 @@
+.tab {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /*margin: 10px;*/
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: larger;
+    margin: 40px;
+    width: 10%;
+  }
+
+  .tab:hover {
+    /*background-color: #da9ff9;*/
+    background-color: black;
+  }
