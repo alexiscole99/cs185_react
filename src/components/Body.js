@@ -4,6 +4,7 @@ import ImageGallery from "./ImageGallery";
 import VideoGallery from "./VideoGallery";
 import Table from "./Table";
 import Email from "./Email";
+import Zoom from "./Zoom";
 import '../App.css';
 
 class Body extends Component {
@@ -84,6 +85,9 @@ class Body extends Component {
             } 
             if(activeTab === 5) {
                 return  <Email/>
+            }
+            if(activeTab === 6) {
+                return  <Zoom/>
             }
             else {
                 return <div></div>
