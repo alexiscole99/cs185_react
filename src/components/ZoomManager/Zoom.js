@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react';
-import '../App.css';
+import './Zoom.css';
 import Tasks from './Tasks';
 import AddTask from './AddTask';
+import Header from './Header';
+import UpdateTask from './UpdateTask';
 
 const Zoom = () => {
     const [tasks, setTasks] = useState([])
+    const [showFullSchedule, setShowFullSchedule] = useState(true)
+    const [showUpdate, setShowUpdate] = useState(false)
 
     useEffect(() => {
         const getTasks = async () => {
@@ -64,8 +68,15 @@ const Zoom = () => {
 
     return (
         <div className='zoom-container'>
-            <AddTask onAdd={addTask}/>
-            <Tasks tasks={tasks} onDelete={deleteTask} onUpdate={updateTask}/>
+            <Header showFullSchedule={showFullSchedule} 
+            setShowFullSchedule={() => setShowFullSchedule(!showFullSchedule)}/>
+            {!showFullSchedule && <AddTask onAdd={addTask}/>}
+            {showFullSchedule && (tasks.length > 0 ? 
+            <Tasks tasks={tasks} onDelete={deleteTask} onUpdate={updateTask} 
+            showUpdate={showUpdate} setShowUpdate={() => setShowUpdate(!showUpdate)}/> :
+            "No available Meetings")}
+            {showUpdate && <UpdateTask onAdd={updateTask} 
+            setShowUpdate={() => setShowUpdate(!showUpdate)}/>}
         </div>
 
     )

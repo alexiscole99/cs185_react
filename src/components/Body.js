@@ -4,7 +4,7 @@ import ImageGallery from "./ImageGallery";
 import VideoGallery from "./VideoGallery";
 import Table from "./Table";
 import Email from "./Email";
-import Zoom from "./Zoom";
+import Zoom from "./ZoomManager/Zoom";
 import '../App.css';
 
 class Body extends Component {
