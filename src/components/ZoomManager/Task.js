@@ -8,11 +8,19 @@ const Task = ({task, onDelete, onUpdate, showUpdate, setShowUpdate}) => {
     }
 
     return(
-        <div className="task">
+        <div className={`task${task.important ? "-important" : ""}`}>
             <div className="task-grid">
-                <h3 className="task-item">
-                    {task.title}
-                </h3>
+                <div>
+                    <h3>
+                        {task.title}
+                    </h3>
+
+                
+                    <p> {task.day} </p>
+                    <a href={task.textInfor}>
+                        {task.textInfor}
+                    </a>
+                </div>
                 <div >
                     <h4 className="task-button" style={{color: 'red', cursor: 'pointer'}}
                     onClick={() => onDelete(task.id)}>
@@ -24,11 +32,6 @@ const Task = ({task, onDelete, onUpdate, showUpdate, setShowUpdate}) => {
                     </h4>
                 </div>
             </div>
-            <p> {task.day} </p>
-            {task.important && <p> important </p>}
-            <a href={task.textInfor}>
-                {task.textInfor}
-            </a>
         </div>
     )
 }

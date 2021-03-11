@@ -33,16 +33,59 @@
 
 .task-grid {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
-/*.task-item {
+.task-item {
     flex-basis: auto;
     flex: none;
     align-self: auto;
-  }*/
+  }
 
 .task-button {
     padding: 10px;   
+}
+
+.task-important {
+    background-color:lavender;
+    padding: 10px;
+    margin: 20px;
+    border-style: double;
+}
+
+.addTask {
+    margin: 20px;
+}
+
+.addTask-element {
+    margin: 10px 0;
+}
+
+.addTask-element label {
+    display: block;
+    font-size: larger;
+}
+
+.addTask-element input {
+    width: 100%;
+    margin: 5px 0;
+    height: 30px;
+    font-size: medium;
+}
+
+.addTask-check {
+    margin: 10px 0;
+    display: flex;
+}
+
+.addTask-check label {
+    font-size: larger;
+    margin-bottom: 20px;
+   
+}
+
+.addTask-check input {
+    height: 25px;
+    margin:  0 20px;
 }

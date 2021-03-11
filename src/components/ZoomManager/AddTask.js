@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import "./Zoom.css";
 
 const AddTask = ({onAdd}) => {
     const [title, setTitle] = useState('')
@@ -7,13 +8,20 @@ const AddTask = ({onAdd}) => {
     const [textInfor, setTextInfor] =useState('')
 
     const onSubmit = (e) => {
-        // TODO: add error handling
         e.preventDefault()
 
         // error handling
         if(!title) {
             alert("Meeting must have a title!")
             return
+        }
+        if(!day) {
+            alert("Meeting must have a date!")
+            return 
+        }
+        if(!textInfor) {
+            alert("Meeting must have a Zoom link!")
+            return 
         }
         if(title.length > 30) {
             alert("Meeting title must be shorter than 30 characters!")
@@ -38,26 +46,26 @@ const AddTask = ({onAdd}) => {
     }
 
     return (
-        <form onSubmit={onSubmit}>
-            <div>
+        <form className="addTask" onSubmit={onSubmit}>
+            <div className="addTask-element">
                 <label>Meeting</label>
                 <input type='text' placeholder='Add Task'
                 value={title} onChange={(e) => setTitle(e.target.value)}/>
             </div>
-            <div>
+            <div className="addTask-element">
                 <label>Date</label>
                 <input type='datetime-local' value={day} onChange={(e) => setDay(e.target.value)}/>
             </div>
-            <div>
+            <div className="addTask-element">
                 <label>Zoom Link</label>
                 <input type='url' value={textInfor} onChange={(e) => setTextInfor(e.target.value)}/>
             </div>
-            <div>
+            <div className="addTask-check">
                 <label>Important</label>
                 <input type='checkbox' checked={important} value={important}
                 onChange={(e) => setImportant(e.currentTarget.checked)}/>
             </div>
-            <input type='submit' value='Save Meeting'/>
+            <input className="btn" type='submit' value='Save Meeting'/>
         </form>
     )
 }

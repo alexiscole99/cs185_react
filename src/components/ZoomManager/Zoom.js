@@ -9,6 +9,7 @@ const Zoom = () => {
     const [tasks, setTasks] = useState([])
     const [showFullSchedule, setShowFullSchedule] = useState(true)
     const [showUpdate, setShowUpdate] = useState(false)
+    const [updateId, setUpdateId] = useState("")
 
     useEffect(() => {
         const getTasks = async () => {
@@ -21,7 +22,6 @@ const Zoom = () => {
     const fetchTasks = async () => {
         const res = await fetch('http://localhost:5000/tasks')
         const data = await res.json()
-        console.log(data)
         return data
     }
 
@@ -48,10 +48,10 @@ const Zoom = () => {
         setTasks([...tasks, data])
     }
 
-    const updateTask = async (id) => {
-        const taskToToggle = await fetchTask(id)
+    const updateTask = async ({title, day, important, textInfor}) => {
+        const taskToToggle = await fetchTask(updateId)
         const updTask = { ...taskToToggle, important: !taskToToggle.important}
-        const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+        const res = await fetch(`http://localhost:5000/tasks/${updateId}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json',
@@ -61,7 +61,7 @@ const Zoom = () => {
         const data = await res.json()
         setTasks(
             tasks.map((task) =>
-                task.id === id ? { ...task, important: data.important} : task
+                task.id === updateId ? { updateId, title, day, important, textInfor} : task
             )
         )
     }
@@ -69,14 +69,15 @@ const Zoom = () => {
     return (
         <div className='zoom-container'>
             <Header showFullSchedule={showFullSchedule} 
-            setShowFullSchedule={() => setShowFullSchedule(!showFullSchedule)}/>
+            setShowFullSchedule={() => setShowFullSchedule(!showFullSchedule)}
+            setShowUpdate={() => setShowUpdate(false)}/>
             {!showFullSchedule && <AddTask onAdd={addTask}/>}
             {showFullSchedule && (tasks.length > 0 ? 
-            <Tasks tasks={tasks} onDelete={deleteTask} onUpdate={updateTask} 
+            <Tasks tasks={tasks} onDelete={deleteTask} onUpdate={setUpdateId} 
             showUpdate={showUpdate} setShowUpdate={() => setShowUpdate(!showUpdate)}/> :
-            "No available Meetings")}
-            {showUpdate && <UpdateTask onAdd={updateTask} 
-            setShowUpdate={() => setShowUpdate(!showUpdate)}/>}
+            <h3>No Available Meetings</h3>)}
+            {showUpdate && <UpdateTask onAdd={updateTask} fetchTask={fetchTask}
+            setShowUpdate={() => setShowUpdate(!showUpdate)} updateId={updateId}/>}
         </div>
 
     )
